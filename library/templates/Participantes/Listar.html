@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block titulo %}Participantes{% endblock %}
+
+{% block contenido %}
+<div class="card">
+
+    <div class="card-body">
+        <h4 class="card-title">
+            Listado de Participantes
+        </h4>
+        <form method="GET" action="">
+            <div class="form-group">
+                <label for="filtro_cedula">Ingrese número de cédula:</label>
+                <input type="text" class="form-control" id="filtro_cedula" name="filtro_cedula" placeholder="Ingrese número de cédula">
+            </div>
+            <button type="submit" class="btn btn-primary">Filtrar</button>
+        </form>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr style="background-color: #274862;">
+                        <!-- <th scope="col" style="color: #ffffff;">Id</th> -->
+                        <th scope="col" style="color: #ffffff;">Sujeto</th>
+                        <th scope="col" style="color: #ffffff;">Nombre</th>
+                        <th scope="col" style="color: #ffffff;">Edad</th>
+                        <th scope="col" style="color: #ffffff;">Cedula</th>
+                        <th scope="col" style="color: #ffffff;">Genero</th>
+                        <th scope="col" style="color: #ffffff;">Años de escolaridad</th>
+                        <th scope="col" style="color: #ffffff;">Grupo</th>
+                        <th scope="col" style="color: #ffffff;">Cod_participante</th>
+                        <th scope="col" style="color: #ffffff;">Visita</th>
+                        <th scope="col" style="color: #ffffff;">Tarea</th>
+                        <th scope="col" style="color: #ffffff;">Fecha</th>
+                        <!-- <th scope="col" style="color: #ffffff;">Datos</th> -->
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for participante in participantes %}
+                    <tr class="">
+                        <!-- <td scope="row" style="border-bottom: 2px solid #274862;">{{ participante.Id}}</td> -->
+                        <td style="border-bottom: 2px solid #274862;">{{ participante.sujeto }}</td>
+                        <td style="border-bottom: 2px solid #274862;">{{ participante.nombre }}</td>
+                        <td style="border-bottom: 2px solid #274862;">{{ participante.edad }}</td>
+                        <td style="border-bottom: 2px solid #274862;">{{ participante.cedula }}</td>
+                        <td style="border-bottom: 2px solid #274862;">{{ participante.genero }}</td>
+                        <td style="border-bottom: 2px solid #274862;">{{ participante.A_escolaridad }}</td>
+                        <td style="border-bottom: 2px solid #274862;">{{ participante.grupo }}</td>
+                        <td style="border-bottom: 2px solid #274862;">{{ participante.cod_participante }}</td>
+                        <td style="border-bottom: 2px solid #274862;">{{ participante.visita }}</td>
+                        <td style="border-bottom: 2px solid #274862;">{{ participante.tarea }}</td>
+                        <td style="border-bottom: 2px solid #274862;">{{ participante.fecha }}</td>
+                        <!-- <td style="border-bottom: 2px solid #274862;">{{ Participante.Datos }}</td> -->
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+
+</div>
+{% endblock %}

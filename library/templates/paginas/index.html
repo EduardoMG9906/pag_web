@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block titulo %} Página de inicio {% endblock %}
+
+{% block contenido %}
+
+<style>
+    body {
+        background-color: white;
+        color: white;
+    }
+
+    .card {
+        margin-top: 50px;
+        background-color: #274862;
+        color: white;
+    }
+
+    .card-header {
+        background-color: #172c3c;
+        border-bottom: 1px solid white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .card-footer {
+        background-color: white;
+        border-top: 1px solid white;
+        color: black;
+    }
+
+    .logo-container {
+        text-align: center;
+        margin-top: 20px;
+        display: flex;  /* Added flex display for alignment */
+        align-items: center;  /* Center items horizontally */
+    }
+
+    .logo {
+        max-width: 100%;
+        height: auto;
+        margin-right: 10px;  /* Add margin for spacing between logo and text */
+    }
+</style>
+
+<div class="card">
+    <div class="card-header">
+        <div class="logo-container">
+            <!-- <span class="material-icons" style="font-size: 6em">bloodtype</span> -->
+            <div style="font-size: 1.2em;">
+                EEG
+                <br>
+                Listado de Participantes
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Bienvenido</h4>
+        <p class="card-text">Revisa los participantes que se han registrado y su informacion</p>
+    </div>
+    <div class="card-footer">
+        <div class="row">
+            <div class="col">
+                <h6 style="color: #172c3c">Hombres</h6>
+                <div class="progress" style="height: 25px ;" role="progressbar" aria-valuenow="{{ hombres }}" aria-valuemin="0" aria-valuemax="{{ hym }}">
+                    <!-- <div class="progress-bar progress-bar-lg" style="background-color: #995052; width: {{ hombres }}%">({{ hombres}}%)</div> -->
+                </div>
+            </div>
+            <div class="col">
+                <h6 style="color: #172c3c">Mujeres</h6>
+                <div class="progress" style="height: 25px ;" role="progressbar" aria-valuenow="{{ mujeres }}" aria-valuemin="0" aria-valuemax="{{ hym }}">
+                    <!-- <div class="progress-bar progress-bar-lg" style="background-color: #995052; width: {{ mujeres }}%">({{ mujeres}}%)</div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
